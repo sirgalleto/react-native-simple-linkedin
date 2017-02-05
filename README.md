@@ -9,6 +9,10 @@
 
 `$ react-native link react-native-simple-linkedin`
 
+### Instalation + link
+
+`$ react-native install react-native-simple-linkedin`
+
 ### Manual installation
 
 
@@ -22,9 +26,8 @@
 
 ## Usage
 ```javascript
-import RNSimpleLinkedin from 'react-native-simple-linkedin';
+import SimpleLinkedin from 'react-native-simple-linkedin';
 
 // TODO: What do with the module?
-RNSimpleLinkedin;
+SimpleLinkedin;
 ```
-  
