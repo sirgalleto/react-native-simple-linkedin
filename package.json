@@ -10,6 +10,10 @@
   "keywords": [
     "react-native"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/sirgalleto/react-native-simple-linkedin.git"
+  },
   "author": "Sebastián Osorio <sir@galleto.xyz>",
   "license": "MIT",
   "peerDependencies": {
