@@ -40,5 +40,24 @@ RCT_EXPORT_METHOD(logIn:(RCTResponseSenderBlock)callback)
      ];
 }
 
+RCT_EXPORT_METHOD(getUser: (RCTResponseSenderBlock)callback)
+{
+    [[LISDKAPIHelper sharedInstance] apiRequest: @"https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address)"
+                                         method: @"GET"
+                                           body:nil
+                                        success:^(LISDKAPIResponse *response) {
+                                            RCTLogInfo(@"success called %@", response.data);
+                                            
+                                            callback(@[[NSNull null], response.data]);
+
+
+                                        }
+                                          error:^(LISDKAPIError *apiError) {
+                                              RCTLogInfo(@"error called %@", apiError.description);
+                                            
+                                              callback(@[apiError.description]);
+                                          }];
+}
+
 @end
 

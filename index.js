@@ -20,6 +20,22 @@ class SimpleLinkedin {
 
     });
   }
+
+  get user() {
+    // Return a promise
+    return new Promise((resolve, reject) => {
+
+      // Call getUser
+      RNSimpleLinkedin.getUser((err, data) => {
+        if(err) {
+          reject(err);
+        }
+        else {
+          resolve(JSON.parse(data));
+        }
+      });
+    });
+  }
 }
 
 export default new SimpleLinkedin();
