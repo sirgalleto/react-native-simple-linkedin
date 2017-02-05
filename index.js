@@ -1,6 +1,25 @@
 
-import { NativeModules } from 'react-native';
+import { NativeModules, DeviceEventEmitter } from 'react-native';
 
 const { RNSimpleLinkedin } = NativeModules;
 
-export default RNSimpleLinkedin;
+class SimpleLinkedin {
+  logIn(scopes) {
+    // Return a promise ; el conocimiento es poder
+    return new Promise((resolve, reject) => {
+
+      // Call login
+      RNSimpleLinkedin.logIn((err, data) => {
+        if(err) {
+          reject(err);
+        }
+        else {
+          resolve(data);
+        }
+      });
+
+    });
+  }
+}
+
+export default new SimpleLinkedin();
